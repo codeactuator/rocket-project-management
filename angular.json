@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "library-management": {
+    "project-management": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "library-management:build"
+            "browserTarget": "project-management:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "library-management:build:production"
+              "browserTarget": "project-management:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "library-management:build"
+            "browserTarget": "project-management:build"
           }
         },
         "test": {
@@ -110,18 +110,22 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "library-management:serve"
+            "devServerTarget": "project-management:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "library-management:serve:production"
+              "devServerTarget": "project-management:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }
   },
-  "defaultProject": "library-management",
+  "defaultProject": "project-management",
   "cli": {
     "analytics": "88563507-d880-4b85-898f-cda8233b5162"
   }
